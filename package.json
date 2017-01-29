@@ -2,7 +2,7 @@
   "name": "redux-action-recompose",
   "version": "1.0.2",
   "description": "Easy integration to support action creator and reducer reuse",
-  "main": "index.js",
+  "main": "dist",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.config.js --content-base dist/ --port 9002 --inline --open",
     "build:babel": "babel src --out-dir dist --ignore demo --copy-files",
