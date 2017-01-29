@@ -1,5 +1,5 @@
 {
-  "name": "reuseable-redux",
+  "name": "redux-action-recompose",
   "version": "1.0.0",
   "description": "Easy integration to support action creator and reducer reuse",
   "main": "index.js",
@@ -19,12 +19,14 @@
   "keywords": [
     "React",
     "Redux",
-    "Share Reducer",
-    "Share Actions"
+    "Shared Reducer",
+    "Shared Actions",
+    "Reusable Reducer",
+    "Reusable Actions"
   ],
   "author": {
     "name": "Ryan Yan",
-    "email": "yanr@advisory.com"
+    "email": "yanmaoyuan@gmail.com"
   },
   "files": [
     "dist"
@@ -32,7 +34,7 @@
   "maintainers": [
     {
       "name": "Ryan Yan",
-      "email": "yanr@advisory.com"
+      "email": "yanmaoyuan@gmail.com"
     }
   ],
   "license": "SEE LICENSE IN LICENSE",
@@ -64,9 +66,6 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
-    "react-redux": "^5.0.2",
-    "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0"
+    "lodash": "^4.17.4"
   }
 }
