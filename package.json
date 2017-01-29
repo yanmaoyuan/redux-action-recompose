@@ -1,0 +1,72 @@
+{
+  "name": "reuseable-redux",
+  "version": "1.0.0",
+  "description": "Easy integration to support action creator and reducer reuse",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.config.js --content-base dist/ --port 9002 --inline --open",
+    "build:babel": "babel src --out-dir dist --ignore demo --copy-files",
+    "build:webpack": "webpack -p --config webpack.prod.config.js --colors --display-error-details",
+    "build:example": "inliner example/index.webpack.html > example/index.min.html",
+    "build": "npm run build:babel && npm run build:webpack && npm run build:example",
+    "prebuild": "rm -rf dist/* example/bundle.js example/index.webpack.html",
+    "postbuild": "rm -rf example/bundle.js example/index.webpack.html",
+    "test-dev": "karma start --reporters progress --no-single-run --browsers Chrome",
+    "test": "karma start --reporters bamboo --single-run --browsers PhantomJS",
+    "http": "http-server ./example -e min.html -p 3456 -o",
+    "postversion": "git push --tags origin HEAD"
+  },
+  "keywords": [
+    "React",
+    "Redux",
+    "Share Reducer",
+    "Share Actions"
+  ],
+  "author": {
+    "name": "Ryan Yan",
+    "email": "yanr@advisory.com"
+  },
+  "files": [
+    "dist"
+  ],
+  "maintainers": [
+    {
+      "name": "Ryan Yan",
+      "email": "yanr@advisory.com"
+    }
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.12.0",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-react": "^5.2.2",
+    "html-webpack-plugin": "^2.21.0",
+    "inliner": "^1.9.5",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "node-sass": "^3.7.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-hot-loader": "^1.3.0",
+    "redux-actions": "^1.2.1",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  }
+}
