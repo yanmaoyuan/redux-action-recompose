@@ -1,6 +1,6 @@
 Redux Action Recompose
 =========================
-A simple, flexible and easily portable library for reusing action-creators and reducers in a redux application. Redux Action Recompose allows you to easily share and reuse action-creators and reducers. In addition, it allows you to easily compose and create sets of action-creators and reducers according to each specific module.
+A simple, flexible and easily portable library for reusing action-creators and reducers in a redux application. Redux Action Recompose allows you to easily share and reuse action-creators and reducers. In addition, it allows you to easily compose and create sets of action-creators and reducers according to each specific module. (Feel free to checkout the example usage in the source code)
 
 ## Installation
 
@@ -9,7 +9,6 @@ npm install --save redux-action-recompose
 ```
 
 ## Documentation
-
 ### Namespace action creators and reducers
 In the example below, there are two separate modules (todos, users) that both requires the fetching logic. Redux Action Recompose enables you to namespace such shared action-creators and reducers, so that each specific module gets its own unique version of the action-creators and reducers while sharing the same code. Note: the code follows [The Ducks File Structure for Redux](https://medium.com/@scbarrus/the-ducks-file-structure-for-redux-d63c41b7035c#.s9w4e07mi)
 `action-creator and reducer`
@@ -121,8 +120,6 @@ const mapDispatchToProps = dispatch => ({
 
 ## Additional Functionalities
 `decorateActions(actions, dispatch, ['a', 'b', 'c', ...])` will dispatch one action for each namespace in the array
-
-`decorateHandlers([asyncHandlers, todoHandlers], initialState)` same as `decorateHandlers({...asyncHandlers, ...todoHandlers})`
 
 ## License
 

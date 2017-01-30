@@ -1,19 +1,18 @@
-import mapKeys from 'lodash/mapKeys';
-import mapValues from 'lodash/mapValues';
-import isArray from 'lodash/isArray';
-
 export const decorateHandlers = (reducers, label) => {
-  const decorate = handlers => mapKeys(handlers, (handler, action) => label ? `${label}/${action}` : action);
+  label = label ? `${label}/` : '';
+  const decorate1 = handlers =>
+    Object.keys(handlers)
+    .reduce((handler, actionType) => ({
+      ...handler,
+      ...{[`${label}${actionType}`]: handlers[actionType]}
+    }), {});
 
-  const decoratedHandlers = isArray(reducers) ?
-    reducers.reduce((r1, r2) => ({...decorate(r1), ...decorate(r2)})) : decorate(reducers);
-
-  return decoratedHandlers;
+  return decorate1(reducers);
 };
 
 export const decorateActions = (actionCreators, dispatch, labels) => {
   const decorateAction = action => {
-    if (isArray(labels)) {
+    if (Array.isArray(labels)) {
       labels.forEach(label => dispatch({...action, type: (label ? `${label}/` : '') + action.type}));
     } else {
       dispatch({...action, type: (labels ? `${labels}/` : '') + action.type});
@@ -32,5 +31,9 @@ export const decorateActions = (actionCreators, dispatch, labels) => {
     };
   };
 
-  return mapValues(actionCreators, actionCreator => decorate(actionCreator));
+  return Object.keys(actionCreators)
+    .reduce((actionCreator, key) => ({
+      ...actionCreator,
+      ...{[key]: decorate(actionCreators[key])}
+    }), {});
 };
