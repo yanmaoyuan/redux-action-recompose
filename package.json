@@ -26,16 +26,10 @@
   ],
   "author": {
     "name": "Ryan Yan",
-    "email": "yanmaoyuan@gmail.com"
+    "email": "insideout.develop@gmail.com"
   },
   "files": [
     "dist"
-  ],
-  "maintainers": [
-    {
-      "name": "Ryan Yan",
-      "email": "yanmaoyuan@gmail.com"
-    }
   ],
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
