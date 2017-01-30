@@ -28,6 +28,11 @@
     "name": "Ryan Yan",
     "email": "insideout.develop@gmail.com"
   },
+  "repository" :
+  {
+    "type" : "git",
+    "url": "https://github.com/yanmaoyuan/redux-action-recompose.git"
+  },
   "files": [
     "dist"
   ],

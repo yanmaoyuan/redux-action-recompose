@@ -59,7 +59,9 @@ const mapDispatchToProps = dispatch => ({
 });
 ```
 You are all set.
+
 1. Now all of the action types that are dispatched under decoratedActions will be namespaced. For example, when you call `decoratedActions.fetchData()`, it will now dispatch `{type: 'todos/FETCH_DATA_REQUEST'}` and `{type: 'todos/FETCH_DATA_RESPONSE', payload}`
+
 2. All of the decorated reducers are also namespaced. The reducer above will be listening for `['todos/FETCH_DATA_REQUEST'](state) {...}` and `['todos/FETCH_DATA_RESPONSE'](state, action) {...}`
 
 now you can easily reuse the action-creator and reducer for other modules simply by decorating them with a different namespace. For instance:
@@ -119,7 +121,8 @@ const mapDispatchToProps = dispatch => ({
 
 ## Additional Functionalities
 `decorateActions(actions, dispatch, ['a', 'b', 'c', ...])` will dispatch one action for each namespace in the array
-decorateHandlers([asyncHandlers, todoHandlers], initialState)` same as decorateHandlers({...asyncHandlers, ...todoHandlers})
+
+`decorateHandlers([asyncHandlers, todoHandlers], initialState)` same as `decorateHandlers({...asyncHandlers, ...todoHandlers})`
 
 ## License
 
