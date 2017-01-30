@@ -1,6 +1,6 @@
 {
   "name": "redux-action-recompose",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Easy integration to support action creator and reducer reuse",
   "main": "dist",
   "scripts": {
@@ -28,9 +28,8 @@
     "name": "Ryan Yan",
     "email": "insideout.develop@gmail.com"
   },
-  "repository" :
-  {
-    "type" : "git",
+  "repository": {
+    "type": "git",
     "url": "https://github.com/yanmaoyuan/redux-action-recompose.git"
   },
   "files": [
