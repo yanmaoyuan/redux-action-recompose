@@ -35,7 +35,9 @@ var decorateActions = exports.decorateActions = function decorateActions(actionC
       var results = actionCreator.apply(undefined, arguments);
       // handle thunk middleware
       if (typeof results === 'function') {
-        results(decorateAction);
+        dispatch(function (_dispatch, getState, extraArgument) {
+          return results(decorateAction, getState, extraArgument);
+        });
       } else {
         decorateAction(results);
       }
