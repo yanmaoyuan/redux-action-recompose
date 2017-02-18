@@ -17,7 +17,7 @@ class Todos extends Component {
   render() {
     const {todos} = this.props;
 
-    if (todos.dataExpired || todos.isLoading) {
+    if (!todos.payload || todos.isLoading) {
       return (<span>Loading todos...</span>);
     }
 
@@ -42,7 +42,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  todoActions: decorateActions(actions, dispatch, 'todos')
+  todoActions: decorateActions(actions, dispatch, ['todos'])
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todos);

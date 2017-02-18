@@ -6,8 +6,7 @@ import { handleActions } from 'redux-actions';
 const ON_SELECT = 'ON_SELECT';
 
 const initialState = {
-  isFetching: false,
-  dataExpired: true
+  isFetching: false
 };
 
 const handlers = {

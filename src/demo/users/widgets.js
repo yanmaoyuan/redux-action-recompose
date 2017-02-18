@@ -3,8 +3,7 @@ import asyncHandlers from '../shared-widgets/async';
 import { handleActions } from 'redux-actions';
 
 const initialState = {
-  isFetching: false,
-  dataExpired: true
+  isFetching: false
 };
 
 export default handleActions(decorateHandlers(asyncHandlers, 'users'), initialState);

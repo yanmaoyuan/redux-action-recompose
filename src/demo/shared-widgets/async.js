@@ -14,16 +14,14 @@ const asyncHandlers = {
     return {
       ...state,
       isFetching: false,
-      dataExpired: false,
       payload: action.payload
     };
   }
 };
 
-const fetchDataRequest = requestOnPage => {
+const fetchDataRequest = () => {
   return {
-    type: FETCH_DATA_REQUEST,
-    requestOnPage
+    type: FETCH_DATA_REQUEST
   };
 };
 
@@ -34,10 +32,10 @@ const fetchDataSuccess = payload => ({
 
 export const fetchData = url => {
   return dispatch => {
-    dispatch(fetchDataRequest(1));
+    dispatch(fetchDataRequest());
     setTimeout(() => {
       return dispatch(fetchDataSuccess(url === 'users' ? users : todos));
-    }, 2000);
+    }, 3000);
   };
 };
 

@@ -17,7 +17,7 @@ class Users extends Component {
   render() {
     const {users} = this.props;
 
-    if (users.dataExpired || users.isLoading) {
+    if (!users.payload || users.isLoading) {
       return (<span>Loading users...</span>);
     }
 
@@ -36,7 +36,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  userActions: decorateActions(actions, dispatch, 'users')
+  // optionally, you could dispatch the same event with multiple labels
+  userActions: decorateActions(actions, dispatch, ['users', 'users2'])
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);

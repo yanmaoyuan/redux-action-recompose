@@ -24,7 +24,9 @@ export const decorateActions = (actionCreators, dispatch, labels) => {
       const results = actionCreator(...arguments);
       // handle thunk middleware
       if(typeof results === 'function') {
-        results(decorateAction);
+        dispatch(
+          (_dispatch, getState, extraArgument) => results(decorateAction, getState, extraArgument)
+        );
       } else {
         decorateAction(results);
       }
