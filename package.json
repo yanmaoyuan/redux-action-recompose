@@ -1,6 +1,6 @@
 {
   "name": "redux-action-recompose",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Redux Decorators to Help Reuse ActionCreators and Reducers",
   "main": "dist",
   "scripts": {
